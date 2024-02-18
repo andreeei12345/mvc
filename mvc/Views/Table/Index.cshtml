@@ -1,0 +1,13 @@
+﻿
+
+@{ 
+    // получение данных
+    using (ApplicationContext db = new ApplicationContext())
+    {
+        var users = db.Users.ToList();
+        foreach (Table u in users)
+        {
+            <tr><td>@u.id</td><td>@u.FIO</td><td>@u.date</td></tr>      
+        }
+    }
+}
